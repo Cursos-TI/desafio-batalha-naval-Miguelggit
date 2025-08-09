@@ -2,7 +2,8 @@
 
 int main(){
     int tabuleiro[11][11] = {0};
-
+    int linha_navio_v = 1;
+    int coluna_navio_v = 9;
     printf("Representação do tabuleiro \n");
 
     for (size_t i = 1; i <= 10; i++)
@@ -15,7 +16,11 @@ int main(){
     }
 
     tabuleiro[7][4] = 3;
+    tabuleiro[7][5] = 3;
+    tabuleiro[7][6] = 3;
     tabuleiro[1][9] = 3;
+    tabuleiro[2][9] = 3;
+    tabuleiro[3][9] = 3;
 
     printf("\n Mostrando Jogo \n");
 
@@ -27,5 +32,4 @@ int main(){
         }
         printf("\n");
     }
-
 }
