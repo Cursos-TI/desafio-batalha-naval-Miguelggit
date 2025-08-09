@@ -1,37 +1,31 @@
 #include <stdio.h>
 
-int main()
-{
-    // Numero 0 representa a agua;
-    // Numero 3 representa o navio;
+int main(){
+    int tabuleiro[11][11] = {0};
 
-    int tabuleiro[0][0] = {0};
-    int linha, coluna;
-    int linhaNavio;
-    int colunaNavio;
-    printf("Escolha o tamanho do Tabuleiro!\n");
-    printf("Digite uma linha de 0 a 10: ");
-    scanf("%d", &linha);
-    printf("Digite uma coluna de 0 a 10: ");
-    scanf("%d", &coluna);
+    printf("Representação do tabuleiro \n");
 
-    printf("O tabuleiro tem um tamanho de %d x %d\n", linha, coluna);
+    for (size_t i = 1; i <= 10; i++)
+    {
+        for(size_t j = 1; j <= 10; j++)
+        {
+            printf("%d ", (int)j);
+        }
+        printf("\n");
+    }
 
-    printf("Agora vamos posicionar o navio!\n");
+    tabuleiro[7][4] = 3;
+    tabuleiro[1][9] = 3;
 
-    printf("Escolha a linha em que o navio sera colocado: ");
-    scanf("%d", &linhaNavio);
+    printf("\n Mostrando Jogo \n");
 
-    printf("Escolha a coluna em que o navio sera colocado: ");
-    scanf("%d", &colunaNavio);
-
-    int posicaoNavio[linhaNavio][colunaNavio];
-
-    posicaoNavio[linhaNavio][colunaNavio] = 3; 
-
-
-    printf(" O Navio esta na linha: %d coluna: %d valor: %d",linhaNavio, colunaNavio, posicaoNavio[linhaNavio][colunaNavio]);
-    
-
+     for (size_t x = 1; x <= 10; x++)
+    {
+        for(size_t y = 1; y <= 10; y++)
+        {
+            printf("%d ", tabuleiro[(int)x][(int)y]);
+        }
+        printf("\n");
+    }
 
 }
