@@ -23,7 +23,7 @@ int main(){
     {
         for(size_t y = 1; y <= 10; y++)
         {
-            printf("%d ", tabuleiro[(int)x][(int)y]);
+            printf("%d ", tabuleiro[x][y]);
         }
         printf("\n");
     }
