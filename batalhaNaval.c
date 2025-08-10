@@ -13,14 +13,15 @@ int main(){
                 tabuleiro[linha_tabuleiro][coluna_tabuleiro++] = 3;
                 tabuleiro[linha_tabuleiro2++][coluna_tabuleiro2] = 3;
                 
-            } // Primeiro navio adicionado
-            for(size_t i = 1; i < 11; i++ ){
-                        for(size_t j = 1; j < 11; j++){
-                            printf("%d\n",tabuleiro[i][j]);
-                        }
-                        printf("\n\n");
-                    } // Print do tabuleiro*
+            }
         }
+
+        for(size_t i = 1; i < 11; i++ ){
+                        for(size_t j = 1; j < 11; j++){
+                            printf("%d",tabuleiro[i][j]);
+                        }
+                        printf("\n");
+                    } // Print do tabuleiro*
 
 
 
