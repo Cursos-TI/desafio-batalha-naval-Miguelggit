@@ -1,35 +1,28 @@
 #include <stdio.h>
 
 int main(){
-    int tabuleiro[11][11] = {0};
-    int linha_navio_v = 1;
-    int coluna_navio_v = 9;
-    printf("Representação do tabuleiro \n");
-
-    for (size_t i = 1; i <= 10; i++)
-    {
-        for(size_t j = 1; j <= 10; j++)
-        {
-            printf("%d ", (int)j);
+        int tabuleiro[11][11] = {0};
+        int linha_tabuleiro = 7;
+        int coluna_tabuleiro = 7;
+        int linha_tabuleiro2 = 1;
+        int coluna_tabuleiro2 = 4;
+        tabuleiro[linha_tabuleiro][coluna_tabuleiro] = 3;
+        
+        for(size_t k = 0; k < 1; k++){
+            for(size_t l = 1; l <= 3; l++){
+                tabuleiro[linha_tabuleiro][coluna_tabuleiro++] = 3;
+                tabuleiro[linha_tabuleiro2++][coluna_tabuleiro2] = 3;
+                
+            } // Primeiro navio adicionado
+            for(size_t i = 1; i < 11; i++ ){
+                        for(size_t j = 1; j < 11; j++){
+                            printf("%d\n",tabuleiro[i][j]);
+                        }
+                        printf("\n\n");
+                    } // Print do tabuleiro*
         }
-        printf("\n");
-    }
 
-    tabuleiro[7][4] = 3;
-    tabuleiro[7][5] = 3;
-    tabuleiro[7][6] = 3;
-    tabuleiro[1][9] = 3;
-    tabuleiro[2][9] = 3;
-    tabuleiro[3][9] = 3;
 
-    printf("\n Mostrando Jogo \n");
 
-     for (size_t x = 1; x <= 10; x++)
-    {
-        for(size_t y = 1; y <= 10; y++)
-        {
-            printf("%d ", tabuleiro[x][y]);
-        }
-        printf("\n");
-    }
+    return 0;
 }
