@@ -39,22 +39,7 @@ int main(){
         for(size_t i = 0; i < linha; i++ ){
 
                         for(size_t j = 0; j < coluna; j++){
-
-                            if(tiroConeX == i && tiroConeY == j){
-
-                                tabuleiro[i][j] = 1; // 1 Representa locais acertados
-                                printf("%d ",tabuleiro[i][j]);
-                                
-                            } else if (tiroCruzX == i && tiroCruzY == j){
-                                tabuleiro[i][j] = 1;
-                                printf("%d ",tabuleiro[i][j]);
-                            } else if(tiroOctaedroX == i & tiroOctaedroY == j){
-                                tabuleiro[i][j] = 1;
-                                printf("%d ",tabuleiro[i][j]);    
-                            } else{
-                                printf("%d ",tabuleiro[i][j]);
-                            }
-
+                            printf("%d ", tabuleiro[i][j]);
                         }
         printf("\n");
        } // Print do tabuleiro*
