@@ -24,24 +24,25 @@ int main(){
         int coluna_tabuleiro4 = 3;
 
         
-        int tiroX = 3;
+        int tiroX = 2;
         int tiroY = 4;
+
             for(size_t l = 0; l < 3; l++){
                 tabuleiro[linha_tabuleiro][coluna_tabuleiro++] = 3; // Navios representados em Horizontal
                 tabuleiro[linha_tabuleiro2++][coluna_tabuleiro2] = 3; // Navios represntados em Vertical
                 tabuleiro[linha_tabuleiro3++][coluna_tabuleiro3++] = 3; // Navios representados em Diagonal
                 tabuleiro[linha_tabuleiro4++][coluna_tabuleiro4++] = 3; // Navios representados em Diagonal 
             }   
-
+            // Habilidade Cone
             for(size_t h = 0; h < linha_cone; h++){
                 for(size_t g = 0; g < coluna_cone; g++){
                     // Trocar todos estes if else por cases, [QUANDO FOR ENVIAR PARA O PROFESSOR]
                     if(tiroX == h && tiroY == g){ // Case 1
-                    if(tabuleiro[h][g] == 3){
+                        if(tabuleiro[h][g] == 3){
                         tabuleiro[h][g] = valor_navio;
                     } else {
                         tabuleiro[h][g] = valor_marcado; 
-                    }    
+                    }   
                     } else if(tiroX + 1 == h && tiroY - 1 == g){ // Case 2
                         if(tabuleiro[h][g] == 3){
                         tabuleiro[h][g] = valor_navio;
@@ -93,10 +94,11 @@ int main(){
                     }
                 }
             }
-
+            // Habilidade Cruz
+            
             for(size_t i = 0; i < linha; i++ ){
                 for(size_t j = 0; j < coluna; j++){
-                    printf("%d ", tabuleiro[i][j]);
+                        printf("%d ", tabuleiro[i][j]);
                 }
 
                 printf("\n"); 
