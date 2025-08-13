@@ -2,50 +2,104 @@
 
 #define linha 10
 #define coluna 10
+#define linha_cone 10
+#define coluna_cone 10
+#define valor_agua 0
+#define valor_marcado 1
 #define valor_navio 3
-#define valor_agua 1
-#define linha_teste 3
-#define coluna_teste 5
-
 int main(){
 
-        int tx = 0;
-        int ty = 2;
-        int cone_tabuleiro[linha_teste][coluna_teste] = {0};
-        int cone[0][0];
-        cone[tx][ty] = 1;
+        int tabuleiro[linha][coluna] = {0};
 
-            for(size_t h = 0; h < linha_teste; h++){
-                for(size_t g = 0; g < coluna_teste; g++){
-                    cone_tabuleiro[h][g] = 9;
-                    if(tx == h && ty == g) {
-                        cone_tabuleiro[h][g] = valor_agua;
-                        
-                    } if(tx + 1 == h && ty == g){
+        int linha_tabuleiro = 7;
+        int coluna_tabuleiro = 7;
 
-                        if(cone[tx][ty] != cone_tabuleiro[h][g]){
+        int linha_tabuleiro2 = 0;
+        int coluna_tabuleiro2 = 4;
 
-                            cone_tabuleiro[h][g] = valor_agua;
-                        }
+        int linha_tabuleiro3 = 0;
+        int coluna_tabuleiro3 = 0;
 
-                        printf("%d ", cone_tabuleiro[tx][ty] );
+        int linha_tabuleiro4 = 5;
+        int coluna_tabuleiro4 = 3;
 
-                    } if(tx + 2 == h && ty == g){
+        
+        int tiroX = 3;
+        int tiroY = 4;
+            for(size_t l = 0; l < 3; l++){
+                tabuleiro[linha_tabuleiro][coluna_tabuleiro++] = 3; // Navios representados em Horizontal
+                tabuleiro[linha_tabuleiro2++][coluna_tabuleiro2] = 3; // Navios represntados em Vertical
+                tabuleiro[linha_tabuleiro3++][coluna_tabuleiro3++] = 3; // Navios representados em Diagonal
+                tabuleiro[linha_tabuleiro4++][coluna_tabuleiro4++] = 3; // Navios representados em Diagonal 
+            }   
 
-                        if(cone[tx][ty] != cone_tabuleiro[h][g]){
-
-                            cone_tabuleiro[h][g] = valor_agua;
-                        }
-
-                        printf("%d ", cone_tabuleiro[tx][ty] );
-
-                    }else {
-                        printf("%d ", cone_tabuleiro[h][g] );
+            for(size_t h = 0; h < linha_cone; h++){
+                for(size_t g = 0; g < coluna_cone; g++){
+                    // Trocar todos estes if else por cases, [QUANDO FOR ENVIAR PARA O PROFESSOR]
+                    if(tiroX == h && tiroY == g){ // Case 1
+                    if(tabuleiro[h][g] == 3){
+                        tabuleiro[h][g] = valor_navio;
+                    } else {
+                        tabuleiro[h][g] = valor_marcado; 
+                    }    
+                    } else if(tiroX + 1 == h && tiroY - 1 == g){ // Case 2
+                        if(tabuleiro[h][g] == 3){
+                        tabuleiro[h][g] = valor_navio;
+                    } else {
+                        tabuleiro[h][g] = valor_marcado; 
+                    }     
+                    } else if(tiroX + 1 == h && tiroY == g){ // Case 3
+                        if(tabuleiro[h][g] == 3){
+                        tabuleiro[h][g] = valor_navio;
+                    } else {
+                        tabuleiro[h][g] = valor_marcado; 
+                    }    
+                    }else if(tiroX + 1 == h && tiroY + 1 == g){ // Case 4
+                        if(tabuleiro[h][g] == 3){
+                        tabuleiro[h][g] = valor_navio;
+                    } else {
+                        tabuleiro[h][g] = valor_marcado; 
+                    }    
+                    }else if(tiroX + 2 == h && tiroY == g){ // Case 5
+                        if(tabuleiro[h][g] == 3){
+                        tabuleiro[h][g] = valor_navio;
+                    } else {
+                        tabuleiro[h][g] = valor_marcado; 
+                    }     
+                    } else if(tiroX + 2 == h && tiroY - 2 == g){ // Case 5
+                        if(tabuleiro[h][g] == 3){
+                        tabuleiro[h][g] = valor_navio;
+                    } else {
+                        tabuleiro[h][g] = valor_marcado; 
+                    }    
+                    } else if(tiroX + 2 == h && tiroY - 1 == g){ // Case 5
+                        if(tabuleiro[h][g] == 3){
+                        tabuleiro[h][g] = valor_navio;
+                    } else {
+                        tabuleiro[h][g] = valor_marcado; 
+                    }    
+                    }else if(tiroX + 2 == h && tiroY + 1 == g){ // Case 5
+                        if(tabuleiro[h][g] == 3){
+                        tabuleiro[h][g] = valor_navio;
+                    } else {
+                        tabuleiro[h][g] = valor_marcado; 
+                    }    
+                    } else if(tiroX + 2 == h && tiroY  + 2 == g){ // Case 5
+                        if(tabuleiro[h][g] == 3){
+                        tabuleiro[h][g] = valor_navio;
+                    } else {
+                        tabuleiro[h][g] = valor_marcado; 
+                    }    
                     }
-                
                 }
-                printf("\n");
             }
 
+            for(size_t i = 0; i < linha; i++ ){
+                for(size_t j = 0; j < coluna; j++){
+                    printf("%d ", tabuleiro[i][j]);
+                }
+
+                printf("\n"); 
+            } // Print do tabuleiro*
     return 0;
 }
