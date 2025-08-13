@@ -2,42 +2,50 @@
 
 #define linha 10
 #define coluna 10
+#define valor_navio 3
+#define valor_agua 1
+#define linha_teste 3
+#define coluna_teste 5
 
 int main(){
 
-        int tabuleiro[linha][coluna] = {0};
+        int tx = 0;
+        int ty = 2;
+        int cone_tabuleiro[linha_teste][coluna_teste] = {0};
+        int cone[0][0];
+        cone[tx][ty] = 1;
 
-        int linha_tabuleiro = 7;
-        int coluna_tabuleiro = 7;
+            for(size_t h = 0; h < linha_teste; h++){
+                for(size_t g = 0; g < coluna_teste; g++){
+                    cone_tabuleiro[h][g] = 9;
+                    if(tx == h && ty == g) {
+                        cone_tabuleiro[h][g] = valor_agua;
+                        
+                    } if(tx + 1 == h && ty == g){
 
-        int linha_tabuleiro2 = 0;
-        int coluna_tabuleiro2 = 4;
+                        if(cone[tx][ty] != cone_tabuleiro[h][g]){
 
-        int linha_tabuleiro3 = 0;
-        int coluna_tabuleiro3 = 0;
+                            cone_tabuleiro[h][g] = valor_agua;
+                        }
 
-        int linha_tabuleiro4 = 5;
-        int coluna_tabuleiro4 = 3;
+                        printf("%d ", cone_tabuleiro[tx][ty] );
 
-        
-        
-            for(size_t l = 1; l <= 3; l++){
-                tabuleiro[linha_tabuleiro][coluna_tabuleiro++] = 3; // Navios representados em Horizontal
-                tabuleiro[linha_tabuleiro2++][coluna_tabuleiro2] = 3; // Navios represntados em Vertical
-                tabuleiro[linha_tabuleiro3++][coluna_tabuleiro3++] = 3; // Navios representados em Diagonal
-                tabuleiro[linha_tabuleiro4++][coluna_tabuleiro4++] = 3; // Navios representados em Diagonal 
-            }   
+                    } if(tx + 2 == h && ty == g){
 
+                        if(cone[tx][ty] != cone_tabuleiro[h][g]){
 
-            for(size_t i = 0; i < linha; i++ ){
+                            cone_tabuleiro[h][g] = valor_agua;
+                        }
 
-                for(size_t j = 0; j < coluna; j++){
-                    
-                    printf("%d ", tabuleiro[i][j]);
+                        printf("%d ", cone_tabuleiro[tx][ty] );
 
+                    }else {
+                        printf("%d ", cone_tabuleiro[h][g] );
+                    }
+                
                 }
+                printf("\n");
+            }
 
-                printf("\n"); 
-            } // Print do tabuleiro*
     return 0;
 }
